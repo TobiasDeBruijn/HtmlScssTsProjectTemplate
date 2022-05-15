@@ -1,0 +1,10 @@
+{
+	"extends": "@tsconfig/esm/tsconfig.json",
+	"include": ["src/ts/**/*"],
+	"compilerOptions": {
+		"outDir": "build/js/",
+		"sourceMap": true,
+		"removeComments": true,
+		"noImplicitAny": true,
+	}
+}
