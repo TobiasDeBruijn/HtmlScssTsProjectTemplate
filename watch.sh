@@ -19,9 +19,11 @@ TSC_PID=$!
 sass --watch src/css:build/css/ &
 SASS_PID=$!
 
+mkdir -p build/html
+
 while true; do
-  $@ cp -r src/html/* build/html &
-  CP_ID=$!
+  cp -r src/html/*.html build/html/ &
+  CP_PID=$!
   inotifywait -e modify -e move -e create -e delete -e attrib -r src/html
   kill $CP_PID
 done
